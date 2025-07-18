@@ -1,0 +1,19 @@
+services:
+  todoapp:
+    build: 
+      context: ./Dockerfiles/app
+    container_name: todoapp_container
+    ports:
+      - "9097:9090"
+    
+  todomysql:
+    build: 
+      context: ./Dockerfiles/db
+    container_name: tododb_container
+    volumes:
+      - tododbvol:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Welcome@12345
+
+  volumes:
+    tododbvol: {}  
