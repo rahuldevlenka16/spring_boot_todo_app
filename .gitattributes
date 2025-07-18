@@ -1,0 +1,3 @@
+$ cat .gitattributes
+*.js linguist-language=Java
+*.js linguist-vendored=Java
