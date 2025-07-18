@@ -15,5 +15,5 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=Welcome@12345
 
-  volumes:
-    tododbvol: {}  
+volumes:
+  tododbvol: {}  
