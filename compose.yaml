@@ -4,7 +4,7 @@ services:
       context: ./Dockerfiles/app
     container_name: todoapp
     ports:
-      - "9097:9099"
+      - "9067:9099"
     depends_on:
       - todomysql
     restart: always
