@@ -18,7 +18,7 @@ spec:
   
     spec:  #under tempalte
       initContainers: #under spec, optinal, used if lost+found folder prevents to initialize mysql, this section will remove that folder
-      - name: busybox
+      - name: remove-lostfound-folder
         image: busybox:latest
         args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
         volumeMounts:

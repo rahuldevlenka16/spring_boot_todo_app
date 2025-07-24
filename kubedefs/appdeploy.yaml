@@ -12,9 +12,20 @@ spec:
       labels:
         app: todoapp # will be used by the selector in the appservice yaml
     spec:
+      initContainers:
+        - name: wait-for-mysql
+          image: busybox
+          command:
+            - sh
+            - -c
+            - >
+              until nslookup db-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local;
+              do echo "Waiting for MySQL to be reachable..."; sleep 2; done;
+
+
       containers:
       - name: todoapp
-        image: <Image>
+        image: <use the dockerhub image>
         resources:
           limits:
             memory: "128Mi"
