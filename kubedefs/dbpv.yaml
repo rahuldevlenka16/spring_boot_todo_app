@@ -1,17 +1,12 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 metadata:
-  name: db-pvc
-  labels: 
-    app: tododb
+  name: db-pv
 spec:
+  capacity:
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-  storageClassName: standard
   hostPath:
     path: /mnt/data/db
-  
-
+  # persistentVolumeReclaimPolicy: Retain
