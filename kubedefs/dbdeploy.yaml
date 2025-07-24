@@ -7,14 +7,14 @@ metadata:
 spec:
   selector: #under 1st spec
     matchLabels:
-      app: myapp
+      app: tododb
   
   replicas: 1 #under 1st spec, for database
 
   template: #under 1st spec
     metadata:
       labels:
-        app: myapp
+        app: tododb
   
     spec:  #under tempalte
       initContainers: #under spec, optinal, used if lost+found folder prevents to initialize mysql, this section will remove that folder
@@ -28,6 +28,10 @@ spec:
       containers:
       - name: todomysql # container name
         image: mysql:8.0.33 # dockerhub offical image
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 3306 # container internal port
         env:
