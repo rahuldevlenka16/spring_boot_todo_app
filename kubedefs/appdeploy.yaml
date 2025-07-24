@@ -25,7 +25,7 @@ spec:
 
       containers:
       - name: todoapp
-        image: <use the dockerhub image>
+        image: rahuldevsecops/todoapp
         resources:
           limits:
             memory: "128Mi"
