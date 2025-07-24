@@ -10,6 +10,8 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: standard # if not specified, it will take default. Check with kubectl get storageclasss. Standard is most commanly used with cloud provided
+  storageClassName: standard
+  hostPath:
+    path: /mnt/data/db
   
 
