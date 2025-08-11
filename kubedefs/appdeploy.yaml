@@ -19,17 +19,20 @@ spec:
             - sh
             - -c
             - >
-              until nslookup db-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local;
+              until nslookup todomysql.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local;
               do echo "Waiting for MySQL to be reachable..."; sleep 2; done;
 
 
       containers:
       - name: todoapp
-        image: rahuldevsecops/todoapp
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: rahuldevsecops/todoapp:v2 # as v1 had wronf mysql hostname in app.propfile
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        # command: ["sleep"] # for debug
+        # args: ["3600"]
         ports:
-        - name: todoapp_port
+        - name: "todoapp-port"
           containerPort: 9099 
+   
