@@ -28,10 +28,10 @@ spec:
       containers:
       - name: todomysql # container name
         image: mysql:8.0.33 # dockerhub offical image
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
         ports:
         - containerPort: 3306 # container internal port
         env:
