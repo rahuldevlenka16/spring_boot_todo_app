@@ -7,6 +7,6 @@ spec:
     app: todoapp # the app field mentioned in the app-deployement yaml
   ports:
   - port: 9067 # service will listen in this port, and forward to target port below
-    targetPort: todoapp_port #app inside the container will run in this port, so target port will be 9099
+    targetPort: todoapp-port #app inside the container will run in this port, so target port will be 9099
     nodePort: 30007
   type: NodePort 
