@@ -22,3 +22,6 @@ log/
 *.doc
 *.docx
 *.pdf
+
+
+*_log

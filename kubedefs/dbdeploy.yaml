@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+  labels:
+    app: tododb
+spec:
+  selector: #under 1st spec
+    matchLabels:
+      app: tododb
+  
+  replicas: 1 #under 1st spec, for database
+
+  template: #under 1st spec
+    metadata:
+      labels:
+        app: tododb
+  
+    spec:  #under tempalte
+      initContainers: #under spec, optinal, used if lost+found folder prevents to initialize mysql, this section will remove that folder
+      - name: remove-lostfound-folder
+        image: busybox:latest
+        args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
+        volumeMounts:
+          - name: tododb-volume
+            mountPath: /var/lib/mysql
+
+      containers:
+      - name: todomysql # container name
+        image: mysql:8.0.33 # dockerhub offical image
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 3306 # container internal port
+        env:
+         - name: MYSQL_ROOT_PASSWORD
+           valueFrom:
+             secretKeyRef:
+               name: db-secret # this is the name field mentioned of the secret yaml under metadata
+               key: db-root-pass #this the key field metnioned in the secret yaml file which contains the db pass value
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: tododb-volume
+      volumes: # under spec
+      - name: tododb-volume # any name for this volume
+        persistentVolumeClaim:
+          claimName: db-pvc #name field mentioned in the pvc yaml file where it will clain the volume
+      
+    
+
+
+
+
