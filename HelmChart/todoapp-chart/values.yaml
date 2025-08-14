@@ -7,7 +7,7 @@ app:
   replicas: 3
   containerPort: 9099
   servicePort: 9067
-  nodePort: 30007
+  nodePort: 30008
 
 mysql:
   name: tododb
