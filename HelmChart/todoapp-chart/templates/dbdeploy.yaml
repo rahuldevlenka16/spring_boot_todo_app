@@ -5,19 +5,19 @@ metadata:
   labels:
     app: {{ .Values.mysql.name }}
 spec:
-  selector: #under 1st spec
+  selector: 
     matchLabels:
       app: {{ .Values.mysql.name }}
   
-  replicas: 1 #under 1st spec, for database
+  replicas: 1 
 
-  template: #under 1st spec
+  template: 
     metadata:
       labels:
         app: {{ .Values.mysql.name }}
   
-    spec:  #under tempalte
-      initContainers: #under spec, optinal, used if lost+found folder prevents to initialize mysql, this section will remove that folder
+    spec:  
+      initContainers: 
       - name: remove-lostfound-folder
         image: busybox:latest
         args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
@@ -26,27 +26,23 @@ spec:
             mountPath: /var/lib/mysql
 
       containers:
-      - name: {{ .Values.mysql.dbContainerName }} # container name
-        image: {{ .Values.mysql.image }} # dockerhub offical image
-        # resources:
-        #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m"
+      - name: {{ .Values.mysql.dbContainerName }} 
+        image: {{ .Values.mysql.image }} 
+        
         ports:
-        - containerPort: 3306 # container internal port
-        env:
+        - containerPort: 3306 
          - name: MYSQL_ROOT_PASSWORD
            valueFrom:
              secretKeyRef:
-               name: db-secret # this is the name field mentioned of the secret yaml under metadata
-               key: db-root-pass #this the key field metnioned in the secret yaml file which contains the db pass value
+               name: db-secret 
+               key: db-root-pass 
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: tododb-volume
-      volumes: # under spec
-      - name: tododb-volume # any name for this volume
+      volumes: 
+      - name: tododb-volume 
         persistentVolumeClaim:
-          claimName: db-pvc #name field mentioned in the pvc yaml file where it will clain the volume
+          claimName: db-pvc 
       
     
 

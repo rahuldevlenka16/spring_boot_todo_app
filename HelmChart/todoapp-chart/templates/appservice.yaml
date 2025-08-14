@@ -4,9 +4,9 @@ metadata:
   name: {{ .Values.app.appServiceName }}
 spec:
   selector:
-    app: {{ .Values.app.name }} # the app field mentioned in the app-deployement yaml
+    app: {{ .Values.app.name }} 
   ports:
-  - port: {{ .Values.app.servicePort }} # service will listen in this port, and forward to target port below
-    targetPort: {{ .Values.app.containerPort }} #app inside the container will run in this port, so target port will be 9099
+  - port: {{ .Values.app.servicePort }} 
+    targetPort: {{ .Values.app.containerPort }} 
     nodePort: {{ .Values.app.nodePort }}
   type: NodePort 

@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.app.name }} # will be used by the selector in the appservice yaml
+        app: {{ .Values.app.name }} 
     spec:
       initContainers:
         - name: wait-for-mysql
@@ -25,13 +25,7 @@ spec:
 
       containers:
       - name: {{ .Values.app.containerName }}
-        image: {{ .Values.app.image }}:{{ .Values.app.tag }} # as v1 had wronf mysql hostname in app.propfile
-        # resources:
-        #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m"
-        # command: ["sleep"] # for debug
-        # args: ["3600"]
+        image: {{ .Values.app.image }}:{{ .Values.app.tag }} 
         ports:
         - name: "todoapp-port"
           containerPort: {{ .Values.app.containerPort }} 
