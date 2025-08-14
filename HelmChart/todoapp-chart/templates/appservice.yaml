@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.app.appServiceName }}
+spec:
+  selector:
+    app: {{ .Values.app.name }} # the app field mentioned in the app-deployement yaml
+  ports:
+  - port: {{ .Values.app.servicePort }} # service will listen in this port, and forward to target port below
+    targetPort: {{ .Values.app.containerPort }} #app inside the container will run in this port, so target port will be 9099
+    nodePort: {{ .Values.app.nodePort }}
+  type: NodePort 

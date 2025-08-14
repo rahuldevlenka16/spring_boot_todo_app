@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todoapp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.name }} # will be used by the selector in the appservice yaml
+    spec:
+      initContainers:
+        - name: wait-for-mysql
+          image: busybox
+          command:
+            - sh
+            - -c
+            - >
+              until nslookup todomysql.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local;
+              do echo "Waiting for MySQL to be reachable..."; sleep 2; done;
+
+
+      containers:
+      - name: {{ .Values.app.containerName }}
+        image: {{ .Values.app.image }}:{{ .Values.app.tag }} # as v1 had wronf mysql hostname in app.propfile
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        # command: ["sleep"] # for debug
+        # args: ["3600"]
+        ports:
+        - name: "todoapp-port"
+          containerPort: {{ .Values.app.containerPort }} 
+   

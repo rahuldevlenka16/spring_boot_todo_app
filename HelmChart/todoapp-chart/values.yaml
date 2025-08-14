@@ -1,0 +1,22 @@
+app:
+  name: todoapp
+  containerName: todoapp
+  appServiceName: todoapp-service
+  image: rahuldevsecops/todoapp
+  tag: v2
+  replicas: 3
+  containerPort: 9099
+  servicePort: 9067
+  nodePort: 30007
+
+mysql:
+  name: tododb
+  rootPass: Welcome@12345
+  dbName: tododb
+  dbServiceName: todomysql
+  dbContainerName: todomysql
+  pvcStorage: 1Gi
+  hostpath: /mnt/data/db
+  image: mysql:8.0.33
+  port: 3306
+
