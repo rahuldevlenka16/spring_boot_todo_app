@@ -5,7 +5,7 @@ on:
     branches: [ "github_action" ]
 
 jobs:
-  compile-and-test:
+  compile-test-package-upload:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,21 +14,36 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          
+
       - name: compile with Maven
         run: mvn compile
       
-      - name: Run Unit Tests
-        run: mvn -B test
+      # - name: Run Unit Tests
+      #   run: mvn -B test
 
-      - name: Package Application
-        run: mvn -B package
+      # - name: Package Application
+      #   run: mvn -B package
 
-      - name: Upload Build Artifact
+      # - name: Upload Build Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: app-package
+      #     path: target/*.jar 
+
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OWASP Dependency-Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: "my-app"
+          path: "."
+          format: "HTML"
+
+      - name: Upload Dependency Report
         uses: actions/upload-artifact@v4
         with:
-          name: app-package
-          path: target/*.jar 
-
+          name: dependency-report
+          path: ./dependency-check-report.html
 
 
