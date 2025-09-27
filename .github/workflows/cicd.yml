@@ -1,0 +1,20 @@
+name: CICD test pipeline
+
+on:
+  push:
+    branches: [ "github_action" ]
+
+
+jobs:
+  build:
+    runs_on:  ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+      - name: Build with maven
+        runs: mvn compile
+
+
+        
