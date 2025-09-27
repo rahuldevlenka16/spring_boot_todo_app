@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
         with:
-        java-version: '17'
-        distribution: 'temurin' #required
-        cache: maven
+          java-version: '17'
+          distribution: 'temurin' #required
+          cache: maven
         uses: actions/setup-java@v4
       - name: Build with maven
         run: mvn compile #run not runs
