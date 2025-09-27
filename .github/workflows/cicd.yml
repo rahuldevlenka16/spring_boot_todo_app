@@ -14,11 +14,21 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          
       - name: compile with Maven
         run: mvn compile
-      - name: Run Unit Tests
-        run: mvn test
       
+      - name: Run Unit Tests
+        run: mvn -B test
+
+      - name: Package Application
+        run: mvn -B package
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-package
+          path: target/*.jar 
 
 
 
