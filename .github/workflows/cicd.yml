@@ -7,14 +7,18 @@ on:
 
 jobs:
   build:
-    runs-on:  ubuntu-latest
+    runs-on:  ubuntu-latest #runs-on not runs_on
 
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
+        with:
+        java-version: '17'
+        distribution: 'temurin' #required
+        cache: maven
         uses: actions/setup-java@v4
       - name: Build with maven
-        run: mvn compile
+        run: mvn compile #run not runs
 
 
 
