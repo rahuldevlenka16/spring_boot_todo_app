@@ -5,7 +5,7 @@ on:
     branches: [ "github_action" ]
 
 jobs:
-  compile and test:
+  compile-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Build with Maven
+      - name: compile with Maven
         run: mvn compile
       - name: Run Unit Tests
         run: mvn test
