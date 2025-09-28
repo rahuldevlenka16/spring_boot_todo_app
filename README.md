@@ -48,7 +48,7 @@ This branch demonstrates deploying a **Spring Boot Todo application** with a **M
 
 3. Access the application:
 
-  Open (http://localhost:30007) if using NodePort.
+     Open (http://localhost:30007) if using NodePort.
 ---
 
 ## 📌 Notes
