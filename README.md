@@ -6,7 +6,13 @@ Project Structure:
 The project is divided into several branches to support different deployment methods.
 
 Branches:
-1. docker: Contains the Dockerfile and docker-compose.yml to run the Spring Boot application and MySQL database inside Docker containers.
-2. helm: Includes Helm charts and templates to deploy the application in Kubernetes using Helm.
-3. k8s: Contains the Kubernetes manifests, such as Deployment, Service, PVC, and Secrets for both the Spring Boot application and MySQL database.
-4. master: Holds the original code for the Spring Boot Todo application.
+| Branch / Feature   | Description                                                               | Status          |
+| ------------------ | ------------------------------------------------------------------------- | --------------  |
+| **master**         | Original Spring Boot Todo application source code                         | ✅ Completed    |
+| **docker**         | Dockerfile + docker-compose for Spring Boot app and MySQL                 | ✅ Completed    |
+| **k8s**            | Kubernetes manifests (Deployments, Services, PVCs, Secrets)               | ✅ Completed    |
+| **helm**           | Helm charts and templates for configurable Kubernetes deployment          | ✅ Completed    |
+| **github_action** | CI/CD workflow: build Docker image, run tests, push to DockerHub/registry | 🔄 In Progress  |
+| **argo_cd**        | GitOps deployment using Argo CD for automated sync to cluster             | ⏳ Planned      |
+
+
