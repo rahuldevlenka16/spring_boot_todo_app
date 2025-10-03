@@ -14,3 +14,10 @@ The `cicd` branch contains a full GitHub Actions pipeline that:
 - `DOCKERHUB_USERNAME` — your DockerHub username
 - `DOCKERHUB_TOKEN` — a DockerHub access token/password
 - `TOKEN` — a GitHub [Personal Access Token (PAT)](https://github.com/settings/tokens) with repo write access (for committing Helm chart updates)
+
+
+
+Screenshots:
+
+Build job:
+![alt text](image-4.png)
