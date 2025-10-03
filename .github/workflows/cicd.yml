@@ -28,11 +28,17 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn clean install -DskipTests
+        run: mvn clean package -DskipTests
 
       - name: Run Unit Tests
         run: mvn test
- 
+    
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-package
+          path: target/*.jar 
+          
   # push:
   #   runs-on: ubuntu-latest
   #   needs: build
