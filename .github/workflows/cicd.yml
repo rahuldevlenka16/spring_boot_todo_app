@@ -59,8 +59,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: ./Dockerfiles/app
-          file: Dockerfile
+          context: .
+          file: ./Dockerfiles/app/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-todo-app:${{ github.run_id }}
 
