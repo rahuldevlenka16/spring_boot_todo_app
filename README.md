@@ -11,7 +11,7 @@ Branches:
 | **master**         | Original Spring Boot Todo application source code                         | ✅ Completed    |
 | **[docker](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/docker)**         | Dockerfile + docker-compose for Spring Boot app and MySQL                 | ✅ Completed    |
 | **[k8s](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/k8s)**            | Kubernetes manifests (Deployments, Services, PVCs, Secrets)               | ✅ Completed    |
-| **[helm](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/helm)**           | Helm charts and templates for configurable Kubernetes deployment          | ✅ Completed    |
+| **[helm](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/helm)**           | Helm charts and templates for configurable Kubernetes deployment and Monitoring using prebuild helm charts        | ✅ Completed    |
 | **[github_action](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/github_action)** | CI/CD workflow: build Docker image, run tests, push to DockerHub/registry | 🔄 In Progress  |
 | **argo_cd**        | GitOps deployment using Argo CD for automated sync to cluster             | ⏳ Planned      |
 
