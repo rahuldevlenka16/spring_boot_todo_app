@@ -8,5 +8,5 @@ spec:
   ports:
   - port: 9067 # service will listen in this port, and forward to target port below
     targetPort: todoapp-port #app inside the container will run in this port, so target port will be 9099
-    nodePort: 30007
+    # nodePort: 30007
   type: NodePort 
