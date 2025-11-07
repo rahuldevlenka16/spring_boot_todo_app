@@ -11,6 +11,7 @@ It starts with Terraform, which uses infrastructure-as-code to define and deploy
 ---
 ## 🛠️ Prerequisites
 Before running Terraform, ensure the following:
+
     • AWS CLI installed and configured 
         ○ aws configure
     • The IAM user should have permissions to create VPCs, EKS clusters, IAM roles, and EC2 instances.
@@ -69,12 +70,6 @@ Notes
     • The setup uses EKS Managed Node Groups, simplifying lifecycle management for worker nodes.
     • Suitable for personal projects, learning, and demo deployments.
 
-🧾 Reference
-
-    • Terraform AWS Provider
-    • Terraform AWS EKS Module
-    • Amazon EKS Documentation
-    • Helm Documentation
 
 Author: Rahul Dev Lenka
 Branch: terraform_eks
