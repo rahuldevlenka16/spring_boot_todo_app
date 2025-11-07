@@ -15,7 +15,7 @@ Branches:
 | `helm` | Helm charts and templates for configurable Kubernetes deployment and monitoring using prebuilt Helm charts | ✅ Completed |
 | `terraform_eks` | Terraform configuration for provisioning an AWS EKS cluster to deploy this application | ✅ Completed |
 | `github_action` | CI/CD workflow: build Docker image, run tests, and push to DockerHub/registry | 🔄 In Progress |
-| `argo_cd` | GitOps deployment using Argo CD for automated sync to the cluster | ⏳ Planned |
+| `argo_cd` | GitOps deployment using Argo CD for automated sync to the cluster | ✅ Completed |
 
 ---
 
