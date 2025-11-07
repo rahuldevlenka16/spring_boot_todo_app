@@ -22,44 +22,55 @@ Before running Terraform, ensure the following:
         ○ helm version
 
 ⚙️ Configuration
-You can modify default values in variables.tf or override them via CLI:
-Variable	Description	Default
-aws_region	AWS region to deploy resources	ap-south-1
-cluster_name	Name of the EKS cluster	todoapp-eks
-node_instance_type	EC2 instance type for worker nodes	t3.medium
-desired_capacity	Desired number of worker nodes	2
+
         
+| Variable | Description | Default |
+|-----------|--------------|----------|
+| `aws_region` | AWS region to deploy resources | `ap-south-1` |
+| `cluster_name` | Name of the EKS cluster | `todoapp-eks` |
+| `node_instance_type` | EC2 instance type for worker nodes | `t3.medium` |
+| `desired_capacity` | Desired number of worker nodes | `2` |
+
+            
 Example:
 
-terraform apply -var="cluster_name=my-cluster" -var="desired_capacity=3"
+    terraform apply -var="cluster_name=my-cluster" -var="desired_capacity=3"
 
 Infra provisioning steps
 
-    1. Initialize Terraform
-terraform init
-    2. Preview the changes
-terraform plan
-    3. Apply and create the cluster
-terraform apply
+1. Initialize Terraform
 
-Type yes when prompted.
-    4. Update your kubeconfig
-aws eks update-kubeconfig --region ap-south-1 --name todoapp-eks
-    5. Verify cluster access
-kubectl get nodes
+       terraform init
+3. Preview the changes
+
+       terraform plan
+5. Apply and create the cluster
+
+       terraform apply
+        Type yes when prompted.
+7. Update your kubeconfig
+
+       aws eks update-kubeconfig --region ap-south-1 --name todoapp-eks
+9. Verify cluster access
+
+       kubectl get nodes
 
 Infra Cleanup
 To destroy all AWS resources created by Terraform:
-terraform destroy
+
+    terraform destroy
+    
     ⚠️ Warning: This will remove the entire EKS cluster, VPC, and all associated resources.
 
 Notes
+
     • The VPC, subnets, security groups, IAM roles, and node groups are all provisioned automatically by the terraform-aws-modules/eks/aws module.
     • Kubernetes version defaults to 1.28 but can be updated in main.tf.
     • The setup uses EKS Managed Node Groups, simplifying lifecycle management for worker nodes.
     • Suitable for personal projects, learning, and demo deployments.
 
 🧾 Reference
+
     • Terraform AWS Provider
     • Terraform AWS EKS Module
     • Amazon EKS Documentation
