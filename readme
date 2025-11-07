@@ -1,6 +1,0 @@
-Windows
-set JAVA_HOME=C:\jdk1.8.0_191\jdk1.8.0_191\
-set PATH=%JAVA_HOME%\bin;%PATH%
-
-export JAVA_HOME=C:/jdk1.8.0_191/jdk1.8.0_191/
-export PATH=$JAVA_HOME/bin:$PATH
