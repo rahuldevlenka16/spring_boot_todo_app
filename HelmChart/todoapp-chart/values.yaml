@@ -3,7 +3,7 @@ app:
   containerName: todoapp
   appServiceName: todoapp-service
   image: rahuldevsecops/springboot-todo-app
-  tag: 19212981787
+  tag: "19213334439"
   replicas: 3
   containerPort: 9099
   servicePort: 9067
