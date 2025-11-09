@@ -64,24 +64,24 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-todo-app:${{ github.run_id }}
 
-  # update-helm-tag:
-  #   runs-on: ubuntu-latest
-  #   needs: push
+  update-helm-tag:
+    runs-on: ubuntu-latest
+    needs: push
 
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v4
-  #       with:
-  #         token: ${{ secrets.TOKEN }}  # A PAT with push access to repo
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TOKEN }}  # A PAT with push access to repo
 
-  #     - name: Update tag in Helm chart
-  #       run: |
-  #         sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' HelmChart/values.yaml
+      - name: Update tag in Helm chart
+        run:
+          sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' HelmChart/values.yaml
 
-  #     - name: Commit and push changes
-  #       run: |
-  #         git config --global user.name "CI Bot"
-  #         git config --global user.email "ci@example.com"
-  #         git add HelmChart/values.yaml
-  #         git commit -m "Update Helm chart image tag to ${{ github.run_id }}"
-  #         git push
+      - name: Commit and push changes
+        run:
+          git config --global user.name "CI Bot"
+          git config --global user.email "ci@example.com"
+          git add HelmChart/values.yaml
+          git commit -m "Update Helm chart image tag to ${{ github.run_id }}"
+          git push
