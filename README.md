@@ -20,4 +20,20 @@ The `cicd` branch contains a full GitHub Actions pipeline that:
 Screenshots:
 
 Build job:
+
 ![alt text](image-4.png)
+
+
+Push job:
+  
+  <img width="757" height="651" alt="image" src="https://github.com/user-attachments/assets/e61b2f71-98cd-4cc2-878f-0715f649a304" />
+  
+  
+  It pushed the docker image
+  
+  <img width="842" height="275" alt="image" src="https://github.com/user-attachments/assets/6c9bcd9c-e5c7-4007-9292-e4a518f6a07d" />
+
+Update Helm Job:
+
+  
+
