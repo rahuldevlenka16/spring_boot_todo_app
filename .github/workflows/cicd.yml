@@ -32,7 +32,13 @@ jobs:
 
       - name: Run Unit Tests
         run: mvn test
-    
+
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/springboot-app:${{ github.sha }} .
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/springboot-app:${{ github.sha }}
+  
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
