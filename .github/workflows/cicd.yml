@@ -82,6 +82,6 @@ jobs:
         run: |
           git config --global user.name "CI Bot"
           git config --global user.email "ci@example.com"
-          git add HelmChart/values.yaml
+          git add .
           git commit -m "Update Helm chart image tag to ${{ github.run_id }}"
           git push
