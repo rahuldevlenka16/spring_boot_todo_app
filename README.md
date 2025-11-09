@@ -31,9 +31,19 @@ Push job:
   
   It pushed the docker image
   
-  <img width="842" height="275" alt="image" src="https://github.com/user-attachments/assets/6c9bcd9c-e5c7-4007-9292-e4a518f6a07d" />
+  <img width="828" height="327" alt="image" src="https://github.com/user-attachments/assets/93a020f4-e9f3-4fc0-84dd-ac96e14ab3ca" />
+
 
 Update Helm Job:
 
+  <img width="450" height="445" alt="image" src="https://github.com/user-attachments/assets/c83a6a88-9168-4626-9028-cc75d0f48091" />
+
+  It updated the helm chart values as per the last pushed tag 
+  
+  <img width="1056" height="161" alt="image" src="https://github.com/user-attachments/assets/7f7d1326-71ab-40c7-b974-6ac700f28a67" />
+  
+  <img width="426" height="275" alt="image" src="https://github.com/user-attachments/assets/6d5e82db-f716-43c2-bb19-8221ccc71757" />
+
+  
   
 
