@@ -1,4 +1,15 @@
-Spring Boot Todo App with Docker, Helm, and Kubernetes
+
+### Important Notice
+I would like to state that **this is the final update I will make regarding any DevOps-related changes in this repository**. Managing multiple branches has made it complicated, so I will be using this repository as a reference for now.
+
+For better manageability, I have created a new monorepo named [springboot-devopsified](https://github.com/rahuldevlenka16/springboot-devopsified), in which I have merged all the relevant branches into a single branch. This new repository will serve as the basis of my DevOps project moving forward.
+
+
+For further updates, please refer to the [springboot-devopsified](https://github.com/rahuldevlenka16/springboot-devopsified) repository.
+
+
+
+### Spring Boot Todo App with Docker, Terraform, Helm, Kubernetes, ArgoCD and monitoring.
 
 This repository contains a simple Spring Boot based Todo application. The application is containerized using Docker, and Kubernetes deployment configurations are provided for deploying it on a Kubernetes cluster. Additionally, Helm templates are included for easier deployment management.
 
