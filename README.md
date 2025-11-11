@@ -1,13 +1,8 @@
 
 ### Important Notice
-I would like to state that **this is the final update I will make regarding any DevOps-related changes in this repository**. Managing multiple branches has made it complicated, so I will be using this repository as a reference for now.
+As per the plan, all the branches is completed! If required I will add additional branched to add more devops related features.
 
-For better manageability, I have created a new monorepo named [springboot-devopsified](https://github.com/rahuldevlenka16/springboot-devopsified), in which I have merged all the relevant branches into a single branch. This new repository will serve as the basis of my DevOps project moving forward.
-
-
-For further updates, please refer to the [springboot-devopsified](https://github.com/rahuldevlenka16/springboot-devopsified) repository.
-
-
+For better manageability, I have created a new mono-repo named [springboot-devopsified](https://github.com/rahuldevlenka16/springboot-devopsified), in which I have merged all the relevant branches into a single branch.
 
 ### Spring Boot Todo App with Docker, Terraform, Helm, Kubernetes, ArgoCD and monitoring.
 
