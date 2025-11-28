@@ -20,7 +20,7 @@ The project is divided into several branches to support different deployment met
 | [`k8s`](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/k8s) | Kubernetes manifests (Deployments, Services, PVCs, Secrets) | ✅ Completed |
 | [`helm`](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/helm) | Helm charts and templates for configurable Kubernetes deployment and monitoring using prebuilt Helm charts | ✅ Completed |
 | [`terraform_eks`](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/terraform_eks) | Terraform configuration for provisioning an AWS EKS cluster to deploy this application | ✅ Completed |
-| [`github_action`](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/github_action) | CI/CD workflow: build Docker image, run tests, and push to DockerHub/registry | ✅ Completed |
+| [`cicd`](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/cicd) | CI/CD workflow: build Docker image, run tests, and push to DockerHub/registry | ✅ Completed |
 | [`argocd`](https://github.com/rahuldevlenka16/spring_boot_todo_app/tree/argocd) | GitOps deployment using Argo CD for automated sync to the cluster | ✅ Completed |
 
 ---
